@@ -22,8 +22,12 @@ public class EmailScheduler {
     public void sendInformationEmail() {
         long size = taskRepository.count();
 
-        String taskText = size == 1 ? "Currently in database you got: 1 task" :
-                "Currently in database you go: " + size + " tasks";
+        String taskText;
+        if (size == 1) {
+            taskText = "Currently in database you got: 1 task";
+        } else {
+            taskText = "Currently in database you got: " + size + " tasks";
+        }
 
         simpleEmailService.send(
                 new Mail(
