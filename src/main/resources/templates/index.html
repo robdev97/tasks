@@ -16,9 +16,9 @@
     <!--/*thymesVar id="one" type="com.crud.tasks.controller.StaticWebPageController"*/-->
     <!--/*thymesVar id="two" type="com.crud.tasks.controller.StaticWebPageController"*/-->
     <span th:text="${one} + ${two}"></span>
-    <span th:text="'2 * 2 = ' + (${two} * ${two})"></span>
-    <span th:text="'2 * 2 + 2 = ' + ((${two} * ${two}) + ${two})"></span>
-    <span th:text="'2 - 2 * 2 = ' + (${two} - (${two} * ${two}))"></span>
+    <p th:text="'2 * 2 = ' + (${two} * ${two})"></p>
+    <p th:text="'2 * 2 + 2 = ' + ((${two} * ${two}) + ${two})"></p>
+    <p th:text="'2 - 2 * 2 = ' + (${two} - (${two} * ${two}))"></p>
 
 </body>
 </html>

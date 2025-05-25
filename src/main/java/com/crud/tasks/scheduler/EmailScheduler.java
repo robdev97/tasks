@@ -18,7 +18,7 @@ public class EmailScheduler {
     private final AdminConfig adminConfig;
     private static final String SUBJECT = "Tasks: Once a day email";
 
-    @Scheduled(cron = "0 0 10 * * * ")
+    @Scheduled(fixedDelay = 10000) //(cron = "0 0 10 * * * ") - fixed delay do dynamicznego wysyłania maila
     public void sendInformationEmail() {
         long size = taskRepository.count();
 
