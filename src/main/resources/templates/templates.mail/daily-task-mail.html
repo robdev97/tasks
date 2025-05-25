@@ -1,0 +1,43 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Daily Task Summary</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f6f6f6; padding: 20px;">
+<span class="preheader"
+      style="display:none; visibility:hidden; mso-hide:all;"
+      th:text="'You have ' + ${taskCount} + ' tasks in your database today.'">
+    Daily task summary
+</span>
+
+<table width="100%" style="max-width: 600px; margin: auto; background-color: #ffffff; padding: 20px; border-radius: 6px;">
+  <tr>
+    <td>
+      <h2 th:text="'Hello ' + ${admin_name} + ','">Hello,</h2>
+      <p th:text="'You currently have ' + ${taskCount} + ' tasks in your application database.'">
+        You have X tasks in your database.
+      </p>
+
+      <p>Here's a list of functionalities available in your app:</p>
+      <ul th:each="functionality : ${application_functionality}">
+        <li th:text="${functionality}">Functionality example</li>
+      </ul>
+
+      <div th:if="${show_button}">
+        <p>Click the button below to review your tasks:</p>
+        <a th:href="${tasks_url}"
+           th:text="${button}"
+           style="display:inline-block; padding:10px 20px; background-color:#3498db; color:white; text-decoration:none; border-radius:5px;">
+          View tasks
+        </a>
+      </div>
+
+      <p th:text="${goodbye}">Best regards,</p>
+      <p th:text="${company}">Your company name</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
